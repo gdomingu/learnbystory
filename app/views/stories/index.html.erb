@@ -11,7 +11,7 @@
 <% @stories.each do |story| %>
   <tr>
     <td><%= story.name %></td>
-    <td><%= link_to 'Show', story %></td>
+    <td><%= link_to 'Read', story %></td>
     <td><%= link_to 'Edit', edit_story_path(story) %></td>
     <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

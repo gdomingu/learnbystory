@@ -3,6 +3,12 @@
 <p>
   <b>Name:</b>
   <%= @story.name %>
+  <% @story.words.each do |wordobj| %>
+  <li>Word: <%= wordobj.name %>
+  <ul>Sentence: <%= wordobj.sentence %></ul>
+  <ul>Definition: <%= wordobj.definition %></ul>
+  </li>
+  <% end %>
 </p>
 
 

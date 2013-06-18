@@ -1,4 +1,5 @@
 Learnbystory::Application.routes.draw do
+  match "read" => 'stories#show', :as =>"read"
   resources :words
 
 
