@@ -1,10 +1,13 @@
 Learnbystory::Application.routes.draw do
+  get "sessions/new"
+
   match "read" => 'stories#show', :as =>"read"
   resources :words
 
 
   resources :stories
 
+  resources :sessions, :except => [:edit, :update, :index]
 
   resources :users
 
