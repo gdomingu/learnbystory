@@ -6,18 +6,18 @@
           <%= @story.name %>
           <%= simple_format(@story.content) %>
         </p>
+        <%= link_to 'Edit', edit_story_path(@story) %> |
+        <%= link_to 'Back', stories_path %>
       </div>
       <!-- This inline style should be moved over to our css file when we make one. Just did this for now-->
       <div class="definitions" style="float:right;width:300px;height:700px;overflow:scroll;">
-      <% @story.words.each do |wordobj| %>
-      <ul>Word:<b><%= simple_format(wordobj.name) %></b>
-      <ul>Sentence: <%= simple_format(wordobj.sentence) %></ul>
-      <ul>Definition: <%= simple_format(wordobj.definition) %></ul>
-      </ul>
-      <% end %>
-
-
-    <%= link_to 'Edit', edit_story_path(@story) %> |
-    <%= link_to 'Back', stories_path %>
-    </div>
+          <% @story.words.each do |wordobj| %>
+          <ul><b><%= simple_format(wordobj.name) %></b>
+          <ul><%= simple_format(wordobj.sentence) %></ul>
+          <ul><%= simple_format(wordobj.definition) %></ul>
+          </ul>
+          <% end %>
+          <%= submit_tag %>
+        </form>
+      </div>
   </div>
