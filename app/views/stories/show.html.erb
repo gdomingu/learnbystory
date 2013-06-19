@@ -1,16 +1,23 @@
 <p id="notice"><%= notice %></p>
+    <div style="width:900px;">
+      <div class="storyblock" style="float:left;width:500px">
+        <p>
+          <b>Name:</b>
+          <%= @story.name %>
+          <%= simple_format(@story.content) %>
+        </p>
+      </div>
+      <!-- This inline style should be moved over to our css file when we make one. Just did this for now-->
+      <div class="definitions" style="float:right;width:300px;height:700px;overflow:scroll;">
+      <% @story.words.each do |wordobj| %>
+      <ul>Word:<b><%= simple_format(wordobj.name) %></b>
+      <ul>Sentence: <%= simple_format(wordobj.sentence) %></ul>
+      <ul>Definition: <%= simple_format(wordobj.definition) %></ul>
+      </ul>
+      <% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @story.name %>
-  <% @story.words.each do |wordobj| %>
-  <li>Word: <%= wordobj.name %>
-  <ul>Sentence: <%= wordobj.sentence %></ul>
-  <ul>Definition: <%= wordobj.definition %></ul>
-  </li>
-  <% end %>
-</p>
 
-
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+    <%= link_to 'Edit', edit_story_path(@story) %> |
+    <%= link_to 'Back', stories_path %>
+    </div>
+  </div>
