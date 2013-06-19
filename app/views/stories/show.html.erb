@@ -11,10 +11,13 @@
       </div>
       <!-- This inline style should be moved over to our css file when we make one. Just did this for now-->
       <div class="definitions" style="float:right;width:300px;height:700px;overflow:scroll;">
-          <% @story.words.each do |wordobj| %>
+          <% @story.words.reverse_each do |wordobj| %>
           <ul><b><%= simple_format(wordobj.name) %></b>
           <ul><%= simple_format(wordobj.sentence) %></ul>
           <ul><%= simple_format(wordobj.definition) %></ul>
+          <!--Still working on this feature.  -->
+          <%= label_tag :word_id, params[:word_id] %>
+          <input type="button" name="user[word_id][]" value="<%= wordobj.id %>">
           </ul>
           <% end %>
           <%= submit_tag %>
