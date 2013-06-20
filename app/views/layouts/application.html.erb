@@ -8,10 +8,20 @@
 </head>
 <body>
 
-  <%= link_to "Signup", new_user_path %>
-  <%= link_to "Log in", new_session_path %>
+  <!-- <%= link_to "Signup", new_user_path %> -->
+  <!-- <%= link_to "Log in", new_session_path %> -->
+ <% if current_user %>
+   Logged in as <%= current_user.email %>
+   <%= link_to "Log out", session_path("anything"), :method => "delete" %>
+ <% else %>
+   <%= link_to "Signup", new_user_path %>
+   <%= link_to "Log in", new_session_path %>
+ <% end %>
 
-  <% unless flash[:notice].blank? %>
+
+<!-- JJJJ creates flash alerts and noticed to be used later via controllers
+ie the controller will left the view know which views need which notice or alert
+ -->  <% unless flash[:notice].blank? %>
      <p id="flash_notice"><%= flash[:notice] %></p>
    <% end %>
 
@@ -20,6 +30,6 @@
    <% end %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
