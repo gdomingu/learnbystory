@@ -69,6 +69,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
   def save_word
     if @current_user.words << Word.find(params[:id])
       redirect_to :back
