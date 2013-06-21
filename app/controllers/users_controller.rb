@@ -69,11 +69,12 @@ class UsersController < ApplicationController
       end
     end
   end
-
   def save_word
-    if @current_user.words << Word.find(params[:id])
-      redirect_to :back
-    end
+      if @current_user.words << Word.find(params[:id])
+        respond_to do |format|
+          format.js { render :action => "save_word" }
+        end
+      end
   end
 
   # DELETE /users/1
