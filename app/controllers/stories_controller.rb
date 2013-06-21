@@ -1,6 +1,9 @@
 class StoriesController < ApplicationController
+  skip_before_filter :require_authentication, :only => [:index]
   # GET /stories
   # GET /stories.json
+
+
   def index
     @stories = Story.all
 
