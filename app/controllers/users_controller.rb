@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_authentication only => [:new, :create]
+  skip_before_filter :require_authentication, :only => [:new, :create]
+  # before filter :require_admin_authentication, :only => [:edit]
   # GET /users
   # GET /users.json
   def index
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: 'successfulsuccessfulsuccessfulsuccessful' }
+        format.html { redirect_to @user, notice: 'blah' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -70,6 +71,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
   def save_word
     if @current_user.words << Word.find(params[:id])
       redirect_to :back

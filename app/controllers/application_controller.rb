@@ -19,5 +19,11 @@ def require_authentication
   end
 end
 
+ def require_admin_authentication
+   if !current_user.nil? && !current_user.is_admin?
+     redirect_to root_path, :alert => "You must be logged in as an admin."
+   end
+ end
+
 
 end
