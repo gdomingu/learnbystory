@@ -1,5 +1,5 @@
 <h1>Sign up!</h1>
 
-<%= render 'form' %>
+<%= render :partial=>"form", :locals =>{:x=>@action} %>
 
 <%= link_to 'Back', users_path %>

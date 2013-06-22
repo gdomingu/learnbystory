@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :require_authentication, :only => [:new, :create]
-  # before filter :require_admin_authentication, :only => [:edit]
-  # GET /users
+  before_filter :require_admin_authentication, :only => [:index]    # GET /users
   # GET /users.json
   def index
     @users = User.all
@@ -27,6 +26,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @action = "create"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @action = "update"
   end
 
   # POST /users
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: 'blah' }
+        format.html { redirect_to stories_path, notice: 'blah' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -87,6 +88,26 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+# instanciating user (all attribuites)
+  def admin
+    @user = User.new
+    @action = "admin_create"
+  end
+
+  def admin_create
+    @user = User.new(params[:user])
+    @user.is_admin=true
+    respond_to do |format|
+      if @user.save
+        session[:user_id] = @user.id
+        format.html { redirect_to @user, notice: 'aaaaaaa' }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

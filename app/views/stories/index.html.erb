@@ -12,9 +12,11 @@
   <tr>
     <td><%= story.name %></td>
     <td><%= link_to 'Read', story %></td>
+<% if !@current_user.nil? && @current_user.is_admin==true%>
     <td><%= link_to 'Edit', edit_story_path(story) %></td>
     <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+  <% end %>
 <% end %>
 </table>
 

@@ -1,7 +1,6 @@
 Learnbystory::Application.routes.draw do
-  get "sessions/new"
   post "/users/save_word/:id" => "users#save_word"
-  match "read" => 'stories#show', :as =>"read"
+  match "/read" => 'stories#show', :as =>"read"
   resources :words
 
 
@@ -9,7 +8,19 @@ Learnbystory::Application.routes.draw do
 
   resources :sessions, :except => [:edit, :update, :index]
 
-  resources :users
+  resources :users do
+    collection do
+      get "admin"
+      post "admin_create"
+    end
+  end
+
+  # get "/users/admin"=>"users#admin"
+
+
+
+# post "/users/create_admin"=>"users#create_admin"
+
 
   root :to => 'stories#index'
   # The priority is based upon order of creation:

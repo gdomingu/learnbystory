@@ -1,4 +1,5 @@
-<%= form_for(@user) do |f| %>
+<!-- this is why @user is created in new -->
+<%= form_for(@user, :url => { :action => x }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>

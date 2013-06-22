@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621012216) do
+ActiveRecord::Schema.define(:version => 20130621231625) do
 
   create_table "stories", :force => true do |t|
     t.string   "name"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(:version => 20130621012216) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.boolean  "is_admin"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "is_admin",        :default => false
   end
 
   create_table "users_words", :id => false, :force => true do |t|
