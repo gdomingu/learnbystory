@@ -7,7 +7,7 @@ $(document).ready(function(){
 
   $('.storyblock b').click(function() {
     var index = $.inArray(this, words);
-    // defs.hide();
+     defs.hide();
     $(defs[index]).show();
   });
 
