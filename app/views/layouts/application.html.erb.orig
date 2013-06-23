@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
@@ -33,7 +32,11 @@
           <li class="divider"></li>
           <li><%= link_to "View Stories", stories_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Review list", words_path %></li>
+<<<<<<< HEAD
+
+=======
+          <% if @current_user != nil %><li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li><% end %>
+>>>>>>> 78e14ac5f31a52a0b437d27080e6b9edb4d65fb0
           <li class="divider"></li>
           <li><%= link_to "Contact Us" %></li>
           <li class="divider"></li>
@@ -41,37 +44,10 @@
         </ul>
       </div>
     </nav>
-=======
-<html>
-<head>
-  <title>Learnbystory</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
- <% if current_user %>
-   Logged in as <%= current_user.email %>
-   <%= link_to "Log out", session_path("anything"), :method => "delete" %>
- <% else %>
-   <%= link_to "Signup", new_user_path %>
-   <%= link_to "Log in", new_session_path %>
- <% end %>
 
 
-<!-- JJJJ creates flash alerts and noticed to be used later via controllers
-ie the controller will left the view know which views need which notice or alert
- -->  <% unless flash[:notice].blank? %>
-     <p id="flash_notice"><%= flash[:notice] %></p>
-   <% end %>
->>>>>>> jsstuff
-
-
-    <!-- <%= link_to "Signup", new_user_path %> -->
-    <!-- <%= link_to "Log in", new_session_path %> -->
-   <% if current_user %>
-     Logged in as <%= current_user.email %>
+   <% if @current_user %>
+     Logged in as <%= @current_user.email %>
      <%= link_to "Log out", session_path("anything"), :method => "delete" %>
    <% else %>
      <%= link_to "Signup", new_user_path %>
@@ -81,7 +57,7 @@ ie the controller will left the view know which views need which notice or alert
 
   <!-- JJJJ creates flash alerts and noticed to be used later via controllers
   ie the controller will left the view know which views need which notice or alert
-   -->  <% unless flash[:notice].blank? %>
+   --><% unless flash[:notice].blank? %>
        <p id="flash_notice"><%= flash[:notice] %></p>
      <% end %>
 

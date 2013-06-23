@@ -17,6 +17,12 @@
         <td><%= button_to "Got it!" %>
       </tr>
     <% end %>
+
+    <p>
+      <b>Completed:</b>
+      <%= @task.completed %>
+    </p>
+
   </table>
 </div>
 <%= link_to 'Back', words_path %>

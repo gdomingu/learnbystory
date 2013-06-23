@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621231625) do
+ActiveRecord::Schema.define(:version => 20130623195325) do
 
   create_table "stories", :force => true do |t|
     t.string   "name"
@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(:version => 20130621231625) do
     t.string   "definition"
     t.text     "sentence"
     t.integer  "story_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "is_complete", :default => false
   end
 
   add_index "words", ["story_id"], :name => "index_words_on_story_id"
