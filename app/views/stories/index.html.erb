@@ -1,25 +1,39 @@
-<h1>Listing stories</h1>
+<div class="row">
 
+</div>
+  <div class="large-4 columns"></div>
+
+<div class="row">
+
+  <div class="large-8 columns">
+    <h2>Choose your story</h2>
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th></th>
 
-<% @stories.each do |story| %>
-  <tr>
-    <td><%= story.name %></td>
-    <td><%= link_to 'Read', story %></td>
-<% if !@current_user.nil? && @current_user.is_admin==true%>
-    <td><%= link_to 'Edit', edit_story_path(story) %></td>
-    <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
-<% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @stories.each do |story| %>
+    <tr>
+      <td><h4><%= story.name %><h4></td>
+      <td><%= link_to 'Read', story %></td>
+      <% if !@current_user.nil? && @current_user.is_admin==true%>
+      <td><%= link_to 'Edit', edit_story_path(story) %></td>
+      <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+      <% end %>
+    </tr>
+  </tbody>
 </table>
 
-<br />
 
+<br />
+<% if !@current_user.nil? && @current_user.is_admin==true%>
 <%= link_to 'New Story', new_story_path %>
+<div class="large-8 columns">
+<% end %>
+</div>
+</div>
