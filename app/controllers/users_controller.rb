@@ -80,14 +80,17 @@ class UsersController < ApplicationController
   end
 
 
-  # def review_word
-  #   @words = @current_user.words
+   def review_word
+     sleep 1
+     @words = @current_user.words
+     @incomplete_tasks = Word.where(:is_complete => false)
+     @complete_tasks = Word.where(:is_complete => true)
 
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render json: @user }
-  #   end
-  # end
+     respond_to do |format|
+       format.html
+       format.json { render json: @user }
+     end
+   end
 
   # DELETE /users/1
   # DELETE /users/1.json

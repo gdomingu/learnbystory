@@ -1,28 +1,49 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <h1> Review List </h1>
-    <table>
-      <tr>
-        <td>Word</td>
-        <td>Definition</td>
-        <td>Sentence</td>
-        <td>Story</td>
-      </tr>
-      <% @current_user.words.each do |x| %>
-      <tr>
-        <td><%= x.name.capitalize %></td>
-        <td><%= x.definition %></td>
-        <td><%= simple_format(x.sentence) %></td>
-        <td><%= x.story.name%></td>
-        <td><%= button_to "Got it!" %>
-      </tr>
-    <% end %>
+   <div class="incomplete_words">
+      <h1> Review List </h1>
+        <table>
+          <tr>
+            <td>Word</td>
+            <td>Definition</td>
+            <td>Sentence</td>
+            <td>Story</td>
+          </tr>
+          <% @current_user.words.each do |x| %>
+          <tr id="edit_word_<%= x.id %>">
+            <td><%= x.name.capitalize %></td>
+            <td><%= x.definition %></td>
+            <td><%= simple_format(x.sentence) %></td>
+            <td><%= x.story.name%></td>
+            <td><%= render :partial => "words/complete", :locals => {:word => x} %></td>
+          </tr>
+        <% end %>
+     </table>
+  </div>
 
-    <p>
-      <b>Completed:</b>
-      <%= @task.completed %>
-    </p>
 
-  </table>
+     <h2>Finished Words</h2>
+     <div class="words" id="complete_words">
+      <table>
+        <tr>
+          <td>Word</td>
+          <td>Definition</td>
+          <td>Sentence</td>
+          <td>Story</td>
+        </tr>
+         <% if @complete_words != nil %>
+          <%= @complete_words.each do |complete_word| %>
+           <%= form_for task, :remote => true do |f| %>
+             <%= f.check_box :completed %>
+             <%= f.submit "Update" %>
+             <%= f.label :completed, task.title %>
+             <%= link_to "(remove)", task, :method => :delete, :data => {:confirm => "Are you sure?"}, :remote => true %>
+          <else>
+            <p>You haven't learned any words yet...</p>
+            <% end %>
+            <% end %>
+         <% end %>
+     </div>
 </div>
+
 <%= link_to 'Back', words_path %>

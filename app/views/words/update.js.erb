@@ -1,0 +1,5 @@
+  <% if @word.is_complete? %>
+    $("#complete_words").append($("#edit_word_<%= @word.id %>"));
+  <% else %>
+    $("#incomplete_words").append($("#edit_word_<%= @word.id %>"));
+  <% end %>

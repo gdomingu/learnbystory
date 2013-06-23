@@ -69,10 +69,10 @@ class WordsController < ApplicationController
     respond_to do |format|
       if @word.update_attributes(params[:word])
         format.html { redirect_to @word, notice: 'Word was successfully updated.' }
-        format.json { head :no_content }
+        format.js #update.js.erb
       else
         format.html { render action: "edit" }
-        format.json { render json: @word.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
