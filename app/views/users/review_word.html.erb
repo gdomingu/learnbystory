@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<% @current_user.words.each do |x| %>
+
+<p>
+  <b>Word:</b>
+  <%= x.name.capitalize %>
+</p>
+
+<p>
+  <b>Definition:</b>
+  <%= x.definition %>
+</p>
+
+<p>
+  <b>Sentence:</b>
+  <%= simple_format(x.sentence) %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= x.story.name%>
+</p>
+<% end %>
+
+
+<%= link_to 'Back', words_path %>

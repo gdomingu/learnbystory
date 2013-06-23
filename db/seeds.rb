@@ -1,15 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# encoding: utf-8
 
 story = Story.create(name: 'The Orange Story')
 Word.create(name: 'Orange', definition: 'A fruit', sentence: 'I like to eat oranges', story_id: story.id)
 
-story2 = Story.create(name: 'Tyrion', content: "Through the door came the soft sound of the high hard, mingled with a <b class=\"word1\" id=\"word1\">trilling</b> of pipes. The singer's voice was muffled by the thick walls, yet Tyrion knew the verse. <em>I loved a maid as fair as summer, he remembered, with sunlight in her hair...</em>
+story2 = Story.create(name: 'Tyrion', content: "Through the door came the soft sound of the high harp, mingled with a <b class=\"word1\" id=\"word1\">trilling</b> of pipes. The singer's voice was muffled by the thick walls, yet Tyrion knew the verse. <em>I loved a maid as fair as summer, he remembered, with sunlight in her hair...</em>
 
 Ser Meryn Trant gaurded the queen's door this night. His muttered \"My Lord\" struck Tyrion as a tad <b class=\"word2\" id=\"word2\">grudging</b>, but he opened the door nontheless. The song broke off abruptly as he strode into his sister's bedchamber.
 
@@ -27,7 +21,7 @@ Cersei regarded him suspiciously. \"If you are here about those begging brothers
 A Clash of Kings: A Song of Ice and Fire: Book Two")
 
 Word.create(name: 'trilling', definition: 'Produce a quavering or warbling sound.
-', sentence: "Through the door came the soft sound of the high hard, mingled with a <b class=\"word1\">trilling</b> of pipes.", story_id: story2.id)
+', sentence: "Through the door came the soft sound of the high harp, mingled with a <b class=\"word1\">trilling</b> of pipes.", story_id: story2.id)
 
 Word.create(name: 'grudging', definition: 'Given, granted, or allowed only reluctantly or resentfully.
 ', sentence: "His muttered \"My Lord\" struck Tyrion as a tad <b class=\"word2\">grudging</b>, but he opened the door nontheless.", story_id: story2.id)

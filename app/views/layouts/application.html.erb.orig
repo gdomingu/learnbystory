@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
+
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
@@ -33,7 +33,7 @@
           <li class="divider"></li>
           <li><%= link_to "View Stories", stories_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Review list" %></li>
+          <li><%= link_to "Review list", words_path %></li>
           <li class="divider"></li>
           <li><%= link_to "Contact Us" %></li>
           <li class="divider"></li>
