@@ -80,14 +80,14 @@ class UsersController < ApplicationController
   end
 
 
-  def review_word
-    @words = @current_user.words
+  # def review_word
+  #   @words = @current_user.words
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @user }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html
+  #     format.json { render json: @user }
+  #   end
+  # end
 
   # DELETE /users/1
   # DELETE /users/1.json
