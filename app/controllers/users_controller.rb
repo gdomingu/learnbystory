@@ -22,8 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
   def new
     @user = User.new
     @action = "create"
@@ -80,6 +78,16 @@ class UsersController < ApplicationController
         end
       end
   end
+
+
+  # def review_word
+  #   @words = @current_user.words
+
+  #   respond_to do |format|
+  #     format.html
+  #     format.json { render json: @user }
+  #   end
+  # end
 
   # DELETE /users/1
   # DELETE /users/1.json

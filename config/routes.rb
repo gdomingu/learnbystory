@@ -1,5 +1,6 @@
 Learnbystory::Application.routes.draw do
   post "/users/save_word/:id" => "users#save_word"
+  post "/users/review_word/:id" => "users#review_word"
   match "/read" => 'stories#show', :as =>"read"
   resources :words
 

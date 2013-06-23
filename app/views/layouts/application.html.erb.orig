@@ -94,7 +94,11 @@ _____________________________________________________
           <li class="divider"></li>
           <li><%= link_to "View Stories", stories_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Review list" %></li>
+<<<<<<< HEAD
+
+=======
+          <% if @current_user != nil %><li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li><% end %>
+>>>>>>> 78e14ac5f31a52a0b437d27080e6b9edb4d65fb0
           <li class="divider"></li>
           <li><%= link_to "Contact Us" %></li>
           <li class="divider"></li>

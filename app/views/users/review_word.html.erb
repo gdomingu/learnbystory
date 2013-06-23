@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1> Review List </h1>
+    <table>
+      <tr>
+        <td>Word</td>
+        <td>Definition</td>
+        <td>Sentence</td>
+        <td>Story</td>
+      </tr>
+      <% @current_user.words.each do |x| %>
+      <tr>
+        <td><%= x.name.capitalize %></td>
+        <td><%= x.definition %></td>
+        <td><%= simple_format(x.sentence) %></td>
+        <td><%= x.story.name%></td>
+        <td><%= button_to "Got it!" %>
+      </tr>
+    <% end %>
+
+    <p>
+      <b>Completed:</b>
+      <%= @task.completed %>
+    </p>
+
+  </table>
+</div>
+<%= link_to 'Back', words_path %>
