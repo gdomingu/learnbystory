@@ -32,7 +32,7 @@
           <li class="divider"></li>
           <li><%= link_to "View Stories", stories_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li>
+          <% if @current_user != nil %><li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li><% end %>
           <li class="divider"></li>
           <li><%= link_to "Contact Us" %></li>
           <li class="divider"></li>
