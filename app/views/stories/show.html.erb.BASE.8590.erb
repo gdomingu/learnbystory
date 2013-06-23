@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+    <div style="width:900px;">
+      <div class="storyblock" style="float:left;width:500px">
+        <p>
+          <strong>Name:</strong>
+          <%= @story.name %>
+          <%= simple_format(@story.content) %>
+        </p>
+        <%= link_to 'Edit', edit_story_path(@story) %> |
+        <%= link_to 'Back', stories_path %>
+      </div>
+      <!-- This inline style should be moved over to our css file when we make one. Just did this for now-->
+      <div class="definitions" style="float:right;width:300px;height:700px;overflow:scroll;">
+        <!-- For some reason, when i do rake db:seed, the words come out in reverse order sometimes. So I have had to switch between reverse_each and each below-->
+          <% @story.words.each do |wordobj| %>
+            <div class="<%= wordobj.id %> def">
+              <p><b><%= simple_format(wordobj.name) %></b></p>
+              <p><%= simple_format(wordobj.sentence) %></p>
+              <p><%= simple_format(wordobj.definition) %></p>
+              <!--Still working on this feature.  -->
+              <%= button_to "Review Later", "/users/save_word/#{wordobj.id}", :remote => true %>
+              <button class="dismiss"> No Need </button>
+              </div>
+              <!--This button takes to us to a save route in the user controller, redirects back to this page, which means as it stands now, everything gets resetted. -->
+
+          <% end %>
+      </div>
+  </div>
