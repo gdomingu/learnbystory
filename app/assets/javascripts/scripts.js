@@ -5,6 +5,7 @@ $(document).ready(function(){
   var words =  $('.storyblock b');
   var defs = $('.def');
 
+
   $('.storyblock b').click(function() {
     var index = $.inArray(this, words);
     defs.hide();

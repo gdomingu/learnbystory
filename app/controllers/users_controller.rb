@@ -83,8 +83,8 @@ class UsersController < ApplicationController
    def review_word
      sleep 1
      @words = @current_user.words
-     @incomplete_tasks = Word.where(:is_complete => false)
-     @complete_tasks = Word.where(:is_complete => true)
+     @incomplete_words = Word.where(:is_complete => false)
+     @complete_words = Word.where(:is_complete => true)
 
      respond_to do |format|
        format.html
