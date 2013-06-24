@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  $(".edit_task input[type=checkbox]").remove();
- $(".edit_task input[type=submit]").on("click", function(e){
+  $(".edit_word input[type=checkbox]").hide();
+ $(".edit_word input[type=submit]").on("click", function(e){
    $(this).parent("form").submit();
  });
 })
