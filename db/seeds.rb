@@ -1,9 +1,9 @@
 # encoding: utf-8
 
-story = Story.create(name: 'The Orange Story')
+story = Story.create(name: '"The Orange Story"')
 Word.create(name: 'Orange', definition: 'A fruit', sentence: 'I like to eat oranges', story_id: story.id)
 
-story2 = Story.create(name: 'Tyrion', content: "Through the door came the soft sound of the high harp, mingled with a <b class=\"word1\" id=\"word1\">trilling</b> of pipes. The singer's voice was muffled by the thick walls, yet Tyrion knew the verse. <em>I loved a maid as fair as summer, he remembered, with sunlight in her hair...</em>
+story2 = Story.create(name: '"Tyrion"', content: "Through the door came the soft sound of the high harp, mingled with a <b class=\"word1\" id=\"word1\">trilling</b> of pipes. The singer's voice was muffled by the thick walls, yet Tyrion knew the verse. <em>I loved a maid as fair as summer, he remembered, with sunlight in her hair...</em>
 
 Ser Meryn Trant gaurded the queen's door this night. His muttered \"My Lord\" struck Tyrion as a tad <b class=\"word2\" id=\"word2\">grudging</b>, but he opened the door nontheless. The song broke off abruptly as he strode into his sister's bedchamber.
 
@@ -77,7 +77,7 @@ Word.create(name: 'revels', definition: "Lively and noisy festivities, esp. thos
 
 Word.create(name: 'reproaches', definition: "The expression of disapproval or disappointment.", sentence: "If you are here about those begging brothers, Tyrion, spare me your <b class=\"word7\">reproaches</b>. I won't have them spreading their filthy treasons in the streets.", story_id: story2.id)
 
-story3 = Story.create(name: "夢の中の少女。", content: "あるところに一人の少女がいました。少女は眠ることが大好きで、 いつも夢を見ていました。毎日たくさんの夢をみて、たくさんの物語を<b class=\"word1\">体験</b>しました。 すると、少女は夢が欲しくなりました。<b class=\"word2\">与えられる</b>夢ではなくて、自分で夢をつくりたくなりました。少女は毎日ベットで<b class=\"word3\">暮らし</b>、昼は見たい夢の本を読み、夜になるとその夢を望みました。しかし、夢は思うとおりになりません。お話はいつも想像を<b class=\"word4\"離れて</b>、少女は<b class=\"word5\">振り回されました</b>。 でも、だんだんとお話が続くようになりました。 少女は楽しくなって、自分でつくった夢の世界でくらしました。もう、現実より夢の世界にいることが多くなっていました。少女は生活を忘れ、体は今にも<b class=\"word6\">折れそう</b>で、肌は<b class=\"word7\">不健康</b>に真っ白でした。髪も<b class=\"word8\">整えず</b>伸びっぱなしの状態で<b class=\"word9\">浮き世離れした</b>姿に、現実は少女を<b class=\"word10\">拒みました</b>。少女は現実で恋をしました。しかし現実は少女を拒みました。少女は現実へいこうとしました。 しかし現実は少女を拒みました。 少女はとうとう追いつめられて、その夜夢を見ました。 夢の世界とのお別れをするために。 夢の中で少女は言いました。 \"この世界が壊れるか、この世界で私が死ぬか\"結果は少女の負けでした。世界で一番の魔法使いに氷らされ、 世界で一番の騎士にくしざしにされて、それぞれの世界で一番に少女はあっけなくころされました。
+story3 = Story.create(name: "\"夢の中の少女。\"", content: "あるところに一人の少女がいました。少女は眠ることが大好きで、 いつも夢を見ていました。毎日たくさんの夢をみて、たくさんの物語を<b class=\"word1\">体験</b>しました。 すると、少女は夢が欲しくなりました。<b class=\"word2\">与えられる</b>夢ではなくて、自分で夢をつくりたくなりました。少女は毎日ベットで<b class=\"word3\">暮らし</b>、昼は見たい夢の本を読み、夜になるとその夢を望みました。しかし、夢は思うとおりになりません。お話はいつも想像を<b class=\"word4\"離れて</b>、少女は<b class=\"word5\">振り回されました</b>。 でも、だんだんとお話が続くようになりました。 少女は楽しくなって、自分でつくった夢の世界でくらしました。もう、現実より夢の世界にいることが多くなっていました。少女は生活を忘れ、体は今にも<b class=\"word6\">折れそう</b>で、肌は<b class=\"word7\">不健康</b>に真っ白でした。髪も<b class=\"word8\">整えず</b>伸びっぱなしの状態で<b class=\"word9\">浮き世離れした</b>姿に、現実は少女を<b class=\"word10\">拒みました</b>。少女は現実で恋をしました。しかし現実は少女を拒みました。少女は現実へいこうとしました。 しかし現実は少女を拒みました。 少女はとうとう追いつめられて、その夜夢を見ました。 夢の世界とのお別れをするために。 夢の中で少女は言いました。 \"この世界が壊れるか、この世界で私が死ぬか\"結果は少女の負けでした。世界で一番の魔法使いに氷らされ、 世界で一番の騎士にくしざしにされて、それぞれの世界で一番に少女はあっけなくころされました。
 
 既に夢は少女を離れ、世界をつくっていました。でも、夢は少女が欲しくなりました。夢は少女を愛していました。ただ一人しかない少女をたくさんの夢が奪い合いました。 細くしなやかな腕丸い<b class=\"word11\">曲線</b>も伸びやかな胴白く美しい脚…
 最後の頭がとくに人気で、たくさんのこわしあいがおこりました。そして、いくつもの世界がこわれてついに、一番暗い世界が頭を閉じ込めました。頭がゆっくりと、眠れるように。こうして少女はばらばらに、夢で眠りましたとさ。

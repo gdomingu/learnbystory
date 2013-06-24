@@ -8,42 +8,46 @@
             <td>Definition</td>
             <td>Sentence</td>
             <td>Story</td>
+            <td>Got it?</td>
           </tr>
           <% @current_user.words.each do |x| %>
-          <tr id="edit_word_<%= x.id %>">
-            <td><%= x.name.capitalize %></td>
-            <td><%= x.definition %></td>
-            <td><%= simple_format(x.sentence) %></td>
-            <td><%= x.story.name%></td>
-            <td><%= render :partial => "words/complete", :locals => {:word => x} %></td>
-          </tr>
-        <% end %>
+              <% if x.is_complete == false %>
+                  <tr id="edit_word_<%= x.id %>">
+                    <td><%= x.name.capitalize %></td>
+                    <td><%= x.definition %></td>
+                    <td><%= simple_format(x.sentence) %></td>
+                    <td><%= x.story.name%></td>
+                    <td><%= render :partial => "words/complete", :locals => {:word => x} %></td>
+                  </tr>
+              <% end %>
+          <% end %>
      </table>
   </div>
 
-
-     <h2>Finished Words</h2>
-     <div class="words" id="complete_words">
-      <table>
-        <tr>
-          <td>Word</td>
-          <td>Definition</td>
-          <td>Sentence</td>
-          <td>Story</td>
-        </tr>
+     <div class="words">
+       <h2>Finished Words</h2>
          <% if @complete_words != nil %>
-          <%= @complete_words.each do |complete_word| %>
-           <%= form_for task, :remote => true do |f| %>
-             <%= f.check_box :completed %>
-             <%= f.submit "Update" %>
-             <%= f.label :completed, task.title %>
-             <%= link_to "(remove)", task, :method => :delete, :data => {:confirm => "Are you sure?"}, :remote => true %>
-          <else>
+          <table id="complete_words">
+            <tr>
+              <td>Word</td>
+              <td>Definition</td>
+              <td>Sentence</td>
+              <td>Story</td>
+            </tr>
+            <% @complete_words.each do |complete_word| %>
+            <tr>
+              <td><%= complete_word.name.capitalize %></td>
+              <td><%= complete_word.definition %></td>
+              <td><%= simple_format(complete_word.sentence) %></td>
+              <td><%= complete_word.story.name%></td>
+              <td><%= render :partial => "words/complete", :locals => {:word => complete_word} %></td>
+            </tr>
+            <% end %>
+          </table>
+         <% else %>
             <p>You haven't learned any words yet...</p>
-            <% end %>
-            <% end %>
          <% end %>
-     </div>
+      </div>
 </div>
 
 <%= link_to 'Back', words_path %>
