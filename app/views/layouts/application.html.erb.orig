@@ -1,66 +1,4 @@
 <!DOCTYPE html>
-
-
-_____________________________________________________
-
-    <nav class="top-bar">
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "Learnbystory", stories_path %></a></h1>
-        </li>
-      </ul>
-
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="divider"></li>
-          <li> <%= link_to "View Stories", stories_path %></li>
-          <li class="divider"></li>
-          <li> <%= link_to "Review list" %></li>
-          <li class="divider"></li>
-          <li> <%= link_to "Contact Us" %></li>
-          <li class="divider"></li>
-          <li> <%= link_to "Account" %></li>
-        </ul>
-       </section>
-
-      <section class="top-bar-section">
-          <% if @current_user %>
-          Hello, <%= @current_user.email %>
-           <%= link_to "Log out", session_path("anything"), :method => "delete" %>
-           <% else %>
-           <%= link_to "Signup", new_user_path %>
-           <%= link_to "Log in", new_session_path %>
-           <% end %>
-      </section>
-    </nav>
-
-
-
-<!--    <% if @current_user %>
-     Logged in as <%= @current_user.email %>
-     <%= link_to "Log out", session_path("anything"), :method => "delete" %>
-   <% else %>
-     <%= link_to "Signup", new_user_path %>
-     <%= link_to "Log in", new_session_path %>
-   <% end %> -->
-
-
-_____________________________________________________
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
@@ -83,76 +21,133 @@ _____________________________________________________
   </head>
 
   <body>
+
+
+<<<<<<< HEAD
+    <% unless  @current_user.is_admin %>
+=======
+    <% unless  !@current_user.nil? && @current_user.is_admin==true%>
+>>>>>>> 9bab8d7ea956ee7bcf1bd5bb2c839f78b37d7a90
     <nav class="top-bar">
+
+
+
+
+
+
       <ul class="title-area">
         <li class="name">
-          <h1><%= link_to "Learnbystory", stories_path %></a></h1>
+          <h1><%= link_to "LearnbyStory", stories_path %></a></h1>
         </li>
       </ul>
+
+       <ul class="right">
+         <li class="divider"></li>
+         <li class="name">
+           <h5><% if @current_user %>
+         Hello, <%= @current_user.name %>
+          <%= link_to "Log out", session_path("anything"), :method => "delete" %>
+          <% else %></h5>
+          <h5><%= link_to "Signup", new_user_path %>
+          <%= link_to "Log in", new_session_path %>
+          <% end %></h5>
+         </li>
+      </ul>
+
+
+
+
       <section class="top-bar-section">
-        <ul class="right">
+        <ul class="left">
           <li class="divider"></li>
           <li><%= link_to "View Stories", stories_path %></li>
           <li class="divider"></li>
-<<<<<<< HEAD
-
-=======
           <% if @current_user != nil %><li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li><% end %>
->>>>>>> 78e14ac5f31a52a0b437d27080e6b9edb4d65fb0
           <li class="divider"></li>
           <li><%= link_to "Contact Us" %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Account" %></li>
+
         </ul>
-      </div>
+      </section>
+
+
+
     </nav>
-=======
-<html>
-<head>
-  <title>Learnbystory</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <% end %>
 
- <% if current_user %>
-   Logged in as <%= current_user.email %>
-   <%= link_to "Log out", session_path("anything"), :method => "delete" %>
- <% else %>
-   <%= link_to "Signup", new_user_path %>
-   <%= link_to "Log in", new_session_path %>
- <% end %>
+    <% if !@current_user.nil? && @current_user.is_admin==true%>
+
+    <nav class="top-bar">
 
 
-<!-- JJJJ creates flash alerts and noticed to be used later via controllers
-ie the controller will left the view know which views need which notice or alert
- -->  <% unless flash[:notice].blank? %>
-     <p id="flash_notice"><%= flash[:notice] %></p>
-   <% end %>
->>>>>>> jsstuff
 
 
-    <!-- <%= link_to "Signup", new_user_path %> -->
-    <!-- <%= link_to "Log in", new_session_path %> -->
-   <% if current_user %>
-     Logged in as <%= current_user.email %>
-     <%= link_to "Log out", session_path("anything"), :method => "delete" %>
-   <% else %>
-     <%= link_to "Signup", new_user_path %>
-     <%= link_to "Log in", new_session_path %>
-   <% end %>
 
 
-  <!-- JJJJ creates flash alerts and noticed to be used later via controllers
-  ie the controller will left the view know which views need which notice or alert
-   -->  <% unless flash[:notice].blank? %>
+      <ul class="title-area">
+        <li class="name">
+          <h3><%= link_to "Admin View", stories_path %></a></h>
+        </li>
+      </ul>
+
+       <ul class="right">
+         <li class="divider"></li>
+         <li class="name">
+           <h5><% if @current_user %>
+         Hello, <%= @current_user.name %>
+          <%= link_to "Log out", session_path("anything"), :method => "delete" %>
+          <% else %></h5>
+          <h5><%= link_to "Signup", new_user_path %>
+          <%= link_to "Log in", new_session_path %>
+          <% end %></h5>
+         </li>
+      </ul>
+
+
+
+
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="divider"></li>
+          <li><%= link_to "USER TABLE", users_path %></li>
+          <li class="divider"></li>
+
+          <li><%= link_to "STORY TABLE", stories_path %></li>
+          <li class="divider"></li>
+
+          <li><%= link_to "WORD TABLE", words_path %></li>
+          <li class="divider"></li>
+        </ul>
+      </section>
+
+
+
+    </nav>
+    <%end%>
+
+
+
+  <!-- JJJJ creates flash alerts and notices to be used later via controllers
+  ie the controller will let the view know which views need which notice or alert
+   -->
+   <div class="row"></div>
+    <div class="large-5 columns"></div>
+
+  <div class="row">
+    <div class="large-7 columns">
+
+      <% unless flash[:notice].blank? %>
        <p id="flash_notice"><%= flash[:notice] %></p>
-     <% end %>
+      <% end %>
 
-     <% unless flash[:alert].blank? %>
+      <% unless flash[:alert].blank? %>
        <p id="flash_alert"><%= flash[:alert] %></p>
      <% end %>
+    </div>
+<br/>
+
+<br/>
+<br/>
+
 
     <%= yield %>
 
