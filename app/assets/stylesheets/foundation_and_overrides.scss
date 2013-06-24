@@ -152,15 +152,15 @@ $p-bg: #FF7605;
 // $h1-font-size: emCalc(5px);
 // $h2-font-size: emCalc(37px);
 // $h3-font-size: emCalc(27px);
-// $h4-font-size: emCalc(5px);
+$h4-font-size: emCalc(20px);
 $h5-font-size: emCalc(15px);
 // $h6-font-size: 1em;
 
 // Subheaders
 
 // $subheader-line-height: 1.4;
-// $subheader-font-color: lighten($header-font-color, 10%);
-$subheader-font-weight: 200;
+ $subheader-font-color: #11b8cf;
+$subheader-font-weight: 300;
 // $subheader-top-margin: .2em;
 // $subheader-bottom-margin: .5em;
 
@@ -210,7 +210,7 @@ $subheader-font-weight: 200;
 
 // Blockquotes
 
-// $blockquote-font-color: lighten($header-font-color, 30%);
+// $blockquote-font-color: lighten($header-font-color, 50%);
 // $blockquote-padding: emCalc(9px) emCalc(20px) 0 emCalc(19px);
 // $blockquote-border: 1px solid #ddd;
 // $blockquote-cite-font-size: emCalc(13px);

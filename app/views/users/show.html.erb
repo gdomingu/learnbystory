@@ -1,3 +1,4 @@
+<h1>Account info</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,6 +16,5 @@
   <%= @user.password_digest %>
 </p> -->
 
+<%= link_to 'Edit', edit_user_path(@user) %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

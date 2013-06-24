@@ -10,6 +10,7 @@ $(document).ready(function(){
     var index = $.inArray(this, words);
     defs.hide();
     $(defs[index]).show();
+    console.log(defs);
   });
 
   $('.def input, .def button').click(function() {

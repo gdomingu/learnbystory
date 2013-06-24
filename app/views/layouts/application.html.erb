@@ -52,15 +52,17 @@
 
 
 
+      <% unless  @current_user.nil?%>
 
       <section class="top-bar-section">
         <ul class="left">
           <li class="divider"></li>
           <li><%= link_to "View Stories", stories_path %></li>
           <li class="divider"></li>
-          <% if @current_user != nil %><li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li><% end %>
+         <li><%= link_to "Review list", "/users/review_word/#{@current_user.id}", :method => "post" %></li>
           <li class="divider"></li>
-          <li><%= link_to "Contact Us" %></li>
+          <li><%= link_to "Account","/users/#{@current_user.id}" %></li>
+            <% end %>
 
         </ul>
       </section>
@@ -131,12 +133,13 @@
   <div class="row">
     <div class="large-7 columns">
 
-      <% unless flash[:notice].blank? %>
-       <p id="flash_notice"><%= flash[:notice] %></p>
+      <h4 class="subheader"><% unless flash[:notice].blank? %>
+       <p id="flash_notice"><%= flash[:notice] %></p></h4>
       <% end %>
 
-      <% unless flash[:alert].blank? %>
-       <p id="flash_alert"><%= flash[:alert] %></p>
+      <h4 class="subheader"><% unless flash[:alert].blank? %>
+       <p id="flash_alert"><%= flash[:alert] %></p></h4>
+
      <% end %>
     </div>
 <br/>
