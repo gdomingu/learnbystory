@@ -1,3 +1,5 @@
+
+
 <div class="row">
 
 </div>
@@ -6,7 +8,12 @@
 <div class="row">
 
   <div class="large-8 columns">
-    <h2>Choose your story</h2>
+    <% if @current_user.nil?%>
+    <p>intro to this page intro to this page intro to this page intro to this page intro to this page intro to this page intro to this page intro to this page</p>
+      <img src="http://i3.squidoocdn.com/resize/squidoo_images/590/draft_lens12043801module109670801photo_1278876605how_to_draw_books.jpg">
+      <% else %>
+    <h1>Choose your story</h1>
+      <p>Decide whether you want to read a new story or review words in a story.</p>
 <table>
   <thead>
     <tr>
@@ -18,7 +25,7 @@
   <tbody>
   <% @stories.each do |story| %>
     <tr>
-      <td><h4><%= story.name %><h4></td>
+      <td><h2 class="subheader"><%= story.name %><h2></td>
       <td><%= link_to 'Read', story %></td>
       <% if !@current_user.nil? && @current_user.is_admin==true%>
       <td><%= link_to 'Edit', edit_story_path(story) %></td>
@@ -35,5 +42,7 @@
 <%= link_to 'New Story', new_story_path %>
 <div class="large-8 columns">
 <% end %>
+<%end%>
+
 </div>
 </div>

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, :notice => "You are now logged in."
     else
-      flash.now[:alert] = "Ooops. Typo or Brain Fart. Try again."
+      flash.now[:alert] = "Username or Password is incorrect."
       render :new
     end
   end

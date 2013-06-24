@@ -44,7 +44,7 @@ $default-float: left;
 
 // Colors
 
-$primary-color: #FF7605;
+$primary-color: #FF3300;
 // $secondary-color: #e9e9e9;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
@@ -153,14 +153,14 @@ $p-bg: #FF7605;
 // $h2-font-size: emCalc(37px);
 // $h3-font-size: emCalc(27px);
 // $h4-font-size: emCalc(5px);
-$h5-font-size: emCalc(25px);
+$h5-font-size: emCalc(15px);
 // $h6-font-size: 1em;
 
 // Subheaders
 
 // $subheader-line-height: 1.4;
-// $subheader-font-color: lighten($header-font-color, 30%);
-// $subheader-font-weight: 300;
+// $subheader-font-color: lighten($header-font-color, 10%);
+$subheader-font-weight: 200;
 // $subheader-top-margin: .2em;
 // $subheader-bottom-margin: .5em;
 
@@ -1217,8 +1217,8 @@ $table-head-bg: #FFFFFF;
 
 // Controlling the styles for the title in the top bar
 
-// $topbar-title-weight: bold;
- $topbar-title-font-size: emCalc(27px);
+// $topbar-title-weight: normal;
+ $topbar-title-font-size: emCalc(30px);
 
 // Style the top bar dropdown elements
 
@@ -1234,7 +1234,7 @@ $table-head-bg: #FFFFFF;
 // $topbar-link-color: #FF7605;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
-// $topbar-link-weight: bold;
+ $topbar-link-weight: normal;
 // $topbar-link-font-size: emCalc(13px);
 // $topbar-link-hover-lightness: -30%; // Darken by 30%
 // $topbar-link-bg-hover: darken($topbar-bg, 3%);
