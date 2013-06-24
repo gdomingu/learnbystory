@@ -1,33 +1,35 @@
 <p id="notice"><%= notice %></p>
     <div style="width:900px;">
       <div class="storyblock" style="float:left;width:500px">
-        <p>
 
+
+        <p>
           <h3 class="subheader"><b><%= @story.name %><b></h3>
           <%= simple_format(@story.content) %>
         </p>
-      <% if !@current_user.nil? && @current_user.is_admin==true%>
-        <%= link_to 'Edit', edit_story_path(@story) %> |
-        <%= link_to 'Back', stories_path %>
+
     <br/>
     <br/>
-    <p><%= link_to "Add Associated Words",  new_word_path(:story_id=>@story.id) %></p>
-    <% end %>
     </div>
       <!-- This inline style should be moved over to our css file when we make one. Just did this for now-->
       <div class="definitions" style="float:right;width:300px;height:900px;overflow:scroll;">
         <!-- For some reason, when i do rake db:seed, the words come out in reverse order sometimes. So I have had to switch between reverse_each and each below-->
           <% @story.words.each do |wordobj| %>
             <div class="<%= wordobj.id %> def" style="position:fixed;width:300px;">
-              <h3 class="subheader"><b><%= simple_format(wordobj.name) %></b></h3>
-              <h4><em><%= simple_format(wordobj.definition.downcase) %></em></h4>
-              <blockquote><%= simple_format(wordobj.sentence) %></blockquote>
+
+              <p><h3 class="subheader"><b><%= simple_format(wordobj.name) %></b></h3></p>
+
+              <p><h4><em><%= simple_format(wordobj.definition.downcase) %></em></h4></p>
+
+              <p><blockquote><%= simple_format(wordobj.sentence) %></blockquote></p>
               <!--Still working on this feature.  -->
+
                 <%= button_to "Review Later", "/users/save_word/#{wordobj.id}", :remote => true, :class=>"tiny round button" %>
+
                 <button  class="tiny round button"> No Need </button>
               </div>
               <!--This button takes to us to a save route in the user controller, redirects back to this page, which means as it stands now, everything gets resetted. -->
 
+
           <% end %>
       </div>
-  </div>

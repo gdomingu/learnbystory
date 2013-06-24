@@ -20,6 +20,46 @@ Cersei regarded him suspiciously. \"If you are here about those begging brothers
 -George R.R. Martin
 A Clash of Kings: A Song of Ice and Fire: Book Two")
 
+________________________
+story101 = Story.create(name: 'From Craigslist.com', content: "Did you leave a prosthetic leg on the bus this morning? - w4m
+
+I found a prosthetic leg wearing a Lucchese brand cowboy boot on the bus this morning. I am not sure what brand the leg is, but it is only the shin and foot portion and it's not mechanical looking. Rather, it looks <b class=\"word101\" id=\"word101\">delusive</b>… almost like it could be from a <b class=\"word102\" id=\"word102\">gargantuan</b>
+ plastic doll or something. I hope you don't mind, but I went ahead and tried the boot on. Magnificent! At first I <b class=\"word103\" id=\"word103\">excogitated</b> why a prosthetic leg user would have purchased such a comfy boot. Then I figured that you probably have another leg and foot that actually work and they probably really appreciate the cushion and arch support provided by the Lucchese boots. I really hope I can meet you and ask you more about your <b class=\"word104\" id=\"word104\">quandary</b>. I wonder what manicurist would say about you if you went in for a pedicure. Do you get charged half price for pedicures? I would <b class=\"word105\" id=\"word105\">reprimand</b> them if they didn't.
+
+Anyway, I really want to give you your prosthetic leg back because I  <b class=\"word106\" id=\"word106\">envisaged</b> that you arere hopping around forced to wear a makeshift papier-mâché leg, or worse, forced to wear a thick tree limb like a pirate. Hopefully we can meet for lunch sometime and I can give you your leg back. Oh, and please only respond if you're attractive. You see, there's this fantasy I have, like a modern-day Cinderella, where I finally meet the owner of the leg and he turns out to be a <b class=\"word107\" id=\"word107\">rapturous</b> prince. Well... maybe not a prince. I want you to be a sexy cowboy war hero who has had one of his legs <b class=\"word108\" id=\"word108\">incinerated</b> by burning rubble that he was trapped under for 68 hours.
+
+ It would be really <b class=\"word109\" id=\"word109\">idyllic</b> for you to sweep me off my feet in some café downtown. And then we'd both fall over because your makeshift tree leg wouldn't be able to support both of us. We'd share a <b class=\"word110\" id=\"word110\">guffaw</b>. I'd kiss you on the cheek and then reattach your professionally made prosthetic leg for you. Based on how breathtaking your prosthetic leg is, I can only imagine that you're incredibly handsome. I would have taken a picture of the leg, only for the pleasure of readers paging through, but I don't have a digital camera. I did the best I could sketching it. Please know that this is now way as amazing as the real thing!
+
+-Candy"
+
+Word.create(name: 'prosthetic', definition: 'Produce a quavering or warbling sound.
+', sentence: "Through the door came the soft sound of the high harp, mingled with a <b class=\"word1\">trilling</b> of pipes.", story_id: story101.id)
+
+Word.create(name: 'delusive', definition: 'Given, granted, or allowed only reluctantly or resentfully.
+', sentence: "His muttered \"My Lord\" struck Tyrion as a tad <b class=\"word2\">grudging</b>, but he opened the door nontheless.", story_id: story101.id)
+
+Word.create(name: 'gargantuan', definition: "Test", sentence: "Her feet were bare, her golden hair artfully <b class=\"word3\">tousled</b>, her robe a green-and-gold samite that caught the light of the candles and shimmered as she looked up.", story_id: story101.id)
+
+Word.create(name: 'excogitated', definition: "Test", sentence: "The compliment made Ser Lancel <b class=\"word4\">sulky</b>; perhaps he thought he was being mocked.", story_id: story101.id)
+
+Word.create(name: 'quandary', definition: "Test", sentence: "At sixteen, he was cursed with all the certainty of youth, <b class=\"word5\">unleavened</b> by any trace of humor or self-doubt, and wed to the arrogance that came so naturally to those born blond and strong and handsome.", story_id: story101.id)
+
+Word.create(name: 'reprimand', definition: "Test", sentence: "\"It grieves me to disturb your <b class=\"word6\">revels</b>, Lancel, but as it happens, I have matters of import to discuss with my sister.\"", story_id: story101.id)
+
+Word.create(name: 'envisaged', definition: "Test", sentence: "If you are here about those begging brothers, Tyrion, spare me your <b class=\"word7\">reproaches</b>. I won't have them spreading their filthy treasons in the streets.", story_id: story101.id)
+
+Word.create(name: 'rapturous', definition: "Test", sentence: "If you are here about those begging brothers, Tyrion, spare me your <b class=\"word7\">reproaches</b>. I won't have them spreading their filthy treasons in the streets.", story_id: story101.id)
+
+Word.create(name: 'incinerated', definition: "Test", sentence: "If you are here about those begging brothers, Tyrion, spare me your <b class=\"word7\">reproaches</b>. I won't have them spreading their filthy treasons in the streets.", story_id: story101.id)
+
+Word.create(name: 'idyllic', definition: "Test", sentence: "If you are here about those begging brothers, Tyrion, spare me your <b class=\"word7\">reproaches</b>. I won't have them spreading their filthy treasons in the streets.", story_id: story101.id)
+
+Word.create(name: 'guffaw', definition: "Test", sentence: "If you are here about those begging brothers, Tyrion, spare me your <b class=\"word7\">reproaches</b>. I won't have them spreading their filthy treasons in the streets.", story_id: story101.id)
+________________________
+
+
+
+
 Word.create(name: 'trilling', definition: 'Produce a quavering or warbling sound.
 ', sentence: "Through the door came the soft sound of the high harp, mingled with a <b class=\"word1\">trilling</b> of pipes.", story_id: story2.id)
 

@@ -13,9 +13,11 @@
       <img src="http://i3.squidoocdn.com/resize/squidoo_images/590/draft_lens12043801module109670801photo_1278876605how_to_draw_books.jpg">
       <% else %>
    <!--  <h1>Choose your story</h1> -->
-      <h4>Decide whether you want to read a new story or review some words.</h4>
+   <h1>Stories</h1>
 
-
+      <% unless  !@current_user.nil? && @current_user.is_admin==true%>
+      <p>Decide whether you want to read a story or review words.</p>
+      <%end %>
 <table>
   <!-- <thead>
     <tr>
