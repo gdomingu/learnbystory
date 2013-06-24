@@ -23,7 +23,7 @@
               <p><%= simple_format(wordobj.sentence) %></p>
               <p><%= simple_format(wordobj.definition) %></p>
                 <%= button_to "Review Later", "/users/save_word/#{wordobj.id}", :remote => true, :class=>"tiny button" %>
-                <button class="dismiss"> No Need </button>
+                <button class="tiny button"> No Need </button>
               </div>
               <!--This button takes to us to a save route in the user controller, redirects back to this page, which means as it stands now, everything gets resetted. -->
 
